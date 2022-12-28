@@ -9,4 +9,6 @@ rem	pause
 rem	exit
 rem )
 
+echo "v0.0.2"
+
 powershell.exe -ExecutionPolicy Bypass -File .\logic.ps1
