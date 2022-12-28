@@ -1,0 +1,27 @@
+v0.1.x:
+	Pre-Config / Onsite / Pre-Domain
+	Pre-Config / Remote / Pre-Domain
+v0.2.x:
+	Pre-Config / Onsite / Post Domain
+	Pre-Config / Remote / Post Domain
+v0.3.x:
+	Post Config / Onsite
+	Post Config / Remote
+v0.4.x:
+	start.bat functional
+	Other Improvments (optional)
+v0.5.x:
+	Full Config / Onsite
+	Full Config / Remote
+v0.6.x:
+	Repair / Onsite
+	Repair / Remote
+v0.7.x:
+	Other Improvments
+	Fix situations we run into leading up to our portion like microsoft accounts
+v0.8.x:
+	Extra functionality (Printers, Backups, Restores, etc...)
+v0.9.x:
+	Code Enhancements
+	Error Handling
+	

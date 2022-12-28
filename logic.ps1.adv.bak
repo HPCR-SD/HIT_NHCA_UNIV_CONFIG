@@ -1,0 +1,201 @@
+#Pauses could be replaced with Start-Sleep -s <seconds> and given enough time could make for a better automated script
+
+# Call functions.ps1 to pair the heart of our code with the brains
+. .\functions.ps1
+
+$CT_ARange = 1..4
+While ($CT_ARange -notcontains $ConfigType) {
+	$ConfigType = Read-Host "Submit the number associated with the configuration process you'd like to use: 1. Pre-Config, 2. Post Config, 3. Full Config, 4. Repair Menu"
+}
+
+$CL_ARange = 1..2
+While ($CT_ARange -notcontains $ConfigLocation) {
+	$ConfigLocation = Read-Host "Submit the number associated with the Location of the machine: 1. Onsite and 2. Remote"
+}
+
+Switch ($ConfigType) {
+	1 {
+		Switch ($ConfigLocation) {
+			1 {
+				Check-PluggedIn
+				Change-SystemTimeoutStart
+				Add-SoftwareDownloadQueue
+				Add-DesktopShortcuts
+				Check-SoftwareDownloadQueue
+				Remove-Office
+				Add-OpenVPN
+				Add-Adobe
+				Add-NiniteScript
+				Add-Agent
+				New-SysopAdmin
+				New-FirstLoginUser
+				hostname
+				Write-Host "Please make sure OpenVPN has been installed before continuing"
+				Pause
+				#Stop-Process -Name 'OpenVPNConnect' -Force
+				Write-Host "Connect to VPN before continuing"
+				Add-Domain
+			}
+
+			2 {
+				Check-PluggedIn
+				Change-SystemTimeoutStart
+				Add-SoftwareDownloadQueue
+				Add-DesktopShortcuts
+				Check-SoftwareDownloadQueue
+				Remove-Office
+				Add-OpenVPN
+				Add-Adobe
+				Add-NiniteScript
+				Add-Agent
+				New-SysopAdmin
+				New-FirstLoginUser
+				hostname
+				Write-Host "Please make sure OpenVPN has been installed before continuing"
+				Pause
+				#Stop-Process -Name 'OpenVPNConnect' -Force
+				Write-Host "Connect to VPN before continuing"
+				Add-Domain
+			}
+		}
+	}
+
+	2 {
+		Switch ($ConfigLocation) {
+			1 {
+
+			}
+
+			2 {
+
+			}
+		}
+	}
+
+	3 {
+		Switch ($ConfigLocation) {
+			1 {
+
+			}
+
+			2 {
+
+			}
+		}
+	}
+
+	4 {
+		Switch ($ConfigLocation) {
+			1 {
+
+			}
+
+			2 {
+
+			}
+		}
+	}
+}
+
+			2 {
+				#Part 2 of 2
+				Write-Host "Starting Pre-Config Part 2 of 2..."
+				#& "C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe"
+				#Write-Host "Connect to VPN before continuing"
+				#pause
+				#Write-Host "Switch Users to login as mtsadmin"
+				#pause
+				Add-Office
+				Write-Host "Make sure Office is done installing before continuing"
+				pause
+				Change-SystemTimeoutEnd
+				Update-System
+				Write-Host "Make sure everything is completed. Continuing will restart the computer."
+				pause
+				shutdown /r
+			}
+
+			default {
+				Write-Host "Invalid Selection...Closing script..."
+				Pause
+			}
+
+		}
+
+	}
+
+	2 {
+		Write-Host "Starting Post Config..."
+		Pause
+		Remove-AnyUser
+		#Bitlocker and such thing that only happen after user has computer and we initially get in
+	}
+
+	3 {
+		Write-Host "Starting Post Config - Remote..."
+		#This is for remote preconfigs
+		Pause
+		Remove-AnyUser
+		#Bitlocker and such thing that only happen after user has computer and we initially get in
+
+	}
+
+	4 {
+		$SubConfig = Read-Host "Submit the number associated with the Full Config Stage you are at: 1. Initial (Pre-Domain Setup) and 2. Post Domain Setup"
+		Switch ($SubConfig) {
+			1 {
+				Write-Host "Starting Full Config Part 1 of 2..."
+				Check-PluggedIn
+				Change-SystemTimeoutStart
+				Add-SoftwareDownloadQueue
+				Add-DesktopShortcuts
+				Check-SoftwareDownloadQueue
+				Remove-Office
+				Add-OpenVPN
+				Add-Adobe
+				Add-NiniteScript
+				Add-Agent
+				New-SysopAdmin
+				hostname
+				Pause
+				Add-Domain
+			}
+
+			2 {
+				#Part 2 of 2
+				Write-Host "Starting Full Config Part 2 of 2..."
+				Add-Office
+				Remove-AnyUser
+				Write-Host "Make sure Office is done installing before continuing"
+				pause
+				Change-SystemTimeoutEnd
+				Update-System
+				Write-Host "Make sure everything is completed. Continuing will restart the computer."
+				pause
+				shutdown /r
+			}
+
+			default {
+				Write-Host "Invalid Selection...Closing script..."
+				Pause
+			}
+
+		}
+
+	}
+
+	5 {
+		Write-Host "Starting Full Config - Remote..."
+		Pause
+	}
+
+	6 {
+		Write-Host "Loading Repair Menu..."
+		Pause
+	}
+
+	default {
+		Write-Host "Invalid Selection...Closing script..."
+		Pause
+	}
+}
