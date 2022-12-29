@@ -176,7 +176,7 @@ function New-FirstLoginUser {
 ### 4. Connect OpenVPN ### #? https://strongvpn.com/autoconnect-windows-10-openvpn/ claims to have a solution
 
 function New-VPNAutoconnect { # This likely needs to be broken up and things likely need to be changed to match what the different parts of this might be. 
-	<# & "C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe" --accept-gdpr --skip-startup-dialogs --import-profile=C:\Users\sysop\Desktop\HIT_NHCA-UNIV_CONFIG\HIT_NHCA_Files\VPN\Profile\mtsadmin.ovpn --name=mtsadmin --username=mtsadmin --password=J_y2Vl2vQ*$4 #>
+	<# & "C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe" --accept-gdpr --skip-startup-dialogs --import-profile=C:\Users\sysop\Desktop\HIT_NHCA-UNIV_CONFIG\HIT_NHCA_Files\VPN\Profile\mtsadmin.ovpn --name=mtsadmin --username=mtsadmin --password=<secured variable string> #>
 
 }
 
