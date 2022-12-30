@@ -9,7 +9,7 @@ Microsoft Account and Bitlocker Fix
 	else - Associate later with Primary Users Microsoft Account
 
 Remote Connection
-	& "C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe" --accept-gdpr --skip-startup-dialogs --import-profile=C:\Users\sysop\Desktop\HIT_NHCA-UNIV_CONFIG\HIT_NHCA_Files\VPN\Profile\mtsadmin.ovpn --name=mtsadmin --username=mtsadmin --password=J_y2Vl2vQ*$4
+	& "C:\Program Files\OpenVPN Connect\OpenVPNConnect.exe" --accept-gdpr --skip-startup-dialogs --import-profile=C:\Users\sysop\Desktop\HIT_NHCA-UNIV_CONFIG\HIT_NHCA_Files\VPN\Profile\mtsadmin.ovpn --name=mtsadmin --username=mtsadmin --password=<replace with secured variable>
 	Retrieve ID
 	Setup Task Scheduler for running the set connection shortcut
 	Edit it's Properties and change the ID to the one retrieved
