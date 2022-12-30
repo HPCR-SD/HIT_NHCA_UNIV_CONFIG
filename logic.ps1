@@ -15,7 +15,7 @@ while ($CT_ARange -notcontains $ConfigType) {
 If (1 -contains $ConfigType) {
 	$CS_ARange = 1..2
 	While ($CS_ARange -notcontains $ConfigStage) {
-		$ConfigStage = Read-Host "Submit the number associated with the Full Config Stage you are at:`n1. Pre-Domain and 2. Post Domain"
+		$ConfigStage = Read-Host "Submit the number associated with the Config Stage you are at:`n1. Pre-Domain and 2. Post Domain"
 	}
 }
 
